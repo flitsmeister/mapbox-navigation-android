@@ -5,7 +5,7 @@ ext {
             targetSdkVersion : 34,
             compileSdkVersion: 34,
             buildToolsVersion: '34.0.0',
-            kotlinVersion    : '2.0.0'
+            kotlinVersion    : '2.1.0'
     ]
 
     version = [
@@ -41,7 +41,10 @@ ext {
             jsonVersion              : '20240303',
             androidxTestKtx          : '1.6.1',
             mockk                    : '1.13.13',
-            kotlinxSerializationJson : '1.7.3'
+            kotlinxSerializationJson : '1.7.3',
+            kotlinTest               : '2.1.0',
+            kotlinxCoroutines        : '1.9.0',
+            kermit                   : '2.0.4'
     ]
 
     pluginVersion = [
@@ -59,11 +62,14 @@ ext {
     dependenciesList = [
             // maplibre
             mapLibre                : "org.maplibre.gl:android-sdk:${version.mapLibreVersion}",
-            mapLibreTurf            : "org.maplibre.gl:android-sdk-turf:${version.mapLibreTurf}",
             mapLibreAnnotations     : "org.maplibre.gl:android-plugin-annotation-v9:${version.mapLibreAnnotations}",
 
             // Mapbox (requests)
             mapboxGeoJson           : "com.mapbox.mapboxsdk:mapbox-sdk-services:${version.mapboxGeoJson}",
+
+            // Kotlin
+            kotlinxCoroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${version.kotlinxCoroutines}",
+            kermit                  : "co.touchlab:kermit:${version.kermit}",
 
             // AutoValue
             autoValue               : "com.google.auto.value:auto-value:${version.autoValue}",
@@ -78,7 +84,6 @@ ext {
             androidxRecyclerView    : "androidx.recyclerview:recyclerview:${version.recyclerViewVersion}",
             androidxCardView        : "androidx.cardview:cardview:${version.cardViewVersion}",
             androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:${version.constraintLayoutVersion}",
-            kotlinstdlib            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${androidVersions.kotlinVersion}",
             supportAnnotation       : "androidx.annotation:annotation:${version.annotation}",
 
             // architecture
@@ -107,6 +112,8 @@ ext {
             json                    : "org.json:json:${version.jsonVersion}",
             androidxTestKtx         : "androidx.test:core-ktx:${version.androidxTestKtx}",
             mockk                   : "io.mockk:mockk:${version.mockk}",
+            kotlinTest              : "org.jetbrains.kotlin:kotlin-test:${version.kotlinTest}",
+            kotlinxCoroutinesTest   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${version.kotlinxCoroutines}",
 
             // play services
             gmsLocation             : "com.google.android.gms:play-services-location:${version.gmsLocation}",
@@ -125,5 +132,6 @@ ext {
             dependencyUpdates   : "com.github.ben-manes:gradle-versions-plugin:${pluginVersion.dependencyUpdates}",
             kotlinGradle        : "org.jetbrains.kotlin:kotlin-gradle-plugin:${androidVersions.kotlinVersion}",
             kotlinxSerialization: "org.jetbrains.kotlin:kotlin-serialization:${androidVersions.kotlinVersion}",
+            kotlinMultiplatform : "org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin:${androidVersions.kotlinVersion}"
     ]
 }
